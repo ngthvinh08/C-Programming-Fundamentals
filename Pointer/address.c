@@ -28,4 +28,6 @@ int main(){
     printf ("Gia tri moi cua con tro (Dia chi cua b): %p\n", ptr);
 
     return 0;
+    
+    //This is a quick test of branch on github
 }
