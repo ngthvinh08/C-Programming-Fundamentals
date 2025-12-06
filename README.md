@@ -1,1 +1,2 @@
 # C fundamental
+The exercises in this repository were originally completed by me when I was a freshman at university, with little prior programming experience. Recently, I’ve decided to revisit them to strengthen my foundational knowledge in C/C++, as I am preparing for an upcoming interview at FPT Software. My latest commit was made four months ago, in July 2025, shortly after finishing my third year at UET.
