@@ -18,5 +18,3 @@ out/
 .DS_Store
 Thumbs.db
 
-#vscode settings
-.vscode
