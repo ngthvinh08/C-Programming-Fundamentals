@@ -26,13 +26,13 @@ int main(){
 
     int arr[n];
     printf ("Values in array: ");
-    for (int i = 0; i < n; i++){
-        scanf ("%d", &arr[i]);
+    for (int j = 0; j < n; j++){
+        scanf ("%d", &arr[j]);
     }
 
 
-    int max = FindMax(arr, n);
-    printf ("The biggest value is: %d", max);
+    int a = FindMax(arr, n);
+    printf ("The biggest value is: %d", a);
 
     return 0;
 }
