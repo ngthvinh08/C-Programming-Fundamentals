@@ -4,18 +4,28 @@ Bạn hãy viết chương trình hiển thị ra tổng của phần tử đầ
 *************************************************************************************************************************************/ 
 #include<stdio.h>
 
+int GetFirstLastSum(int *arr, int n){
+    return arr[0] + arr[n-1];
+}
+
 int main() {
     int n;
-    scanf ("%d\n", &n);
-    int arr[100];
-    for (int i = 0; i < n; i++){
-        scanf ("%d", &arr[i]);
+    printf ("Input number of element in the array: ");
+    scanf ("%d", &n);
+
+    /* Condition */
+    if (n <= 0) {
+        printf ("There must be at least 1 element"); 
+        return 1;
     }
 
-    int sum = 0;
-    for (int i = 0; i < n; i++){
-        sum = arr[0] + arr[n-1];
+    int arr[n];
+    printf ("Input values in the array: ");
+    for (int j = 0; j < n; j++){
+        scanf ("%d", &arr[j]);
     }
-    printf ("%d\n", sum);
+    
+    int a = GetFirstLastSum(arr, n);
+    printf ("Sum of the first and last element in array is: %d\n", a);
     return 0;
 }
