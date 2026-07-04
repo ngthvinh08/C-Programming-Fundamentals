@@ -24,6 +24,11 @@ int main(){
     printf ("The size of array: ");
     scanf ("%d", &n);
 
+    if (n <= 0){
+        printf ("There must be at least one element in array");
+        return 1;
+    }
+
     int arr[n];
     printf ("Values in array: ");
     for (int j = 0; j < n; j++){
