@@ -26,6 +26,8 @@ int main(){
 
     if (n <= 0){
         printf ("There must be at least one element in array");
+
+        /* Early return: */
         return 1;
     }
 
