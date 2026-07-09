@@ -30,15 +30,25 @@ void XORSwap(int *a, int *b) {
     *a = *a ^ *b;
 }
 
+/* Macro */
+#define SWAP(x, y) do {          \
+    typeof(x) temp = (x);        \
+    (x) = (y);                   \
+    (y) = temp;                  \
+} while(0)
 
 
 /* Function to check and re-arrange */
 
 int main(){
-    int c = 5;
-    int d = 10;
+    int c = 5, d = 10;
+    double e = 3.14, f = 2.71;
+    char *p = "Hello", *q = "World";
 
     NonPointerSwap(c,d);
     XORSwap(&c, &d);
     Swap(&c, &d);
+    SWAP (c, d);
+    SWAP (e, f);
+    SWAP (p, q);
 }
