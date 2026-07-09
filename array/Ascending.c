@@ -6,6 +6,8 @@ dần rồi in ra màn hình kết quả.
 *******************************************************************/
 #include <stdio.h>
 
+#define TEST_SWAP_FUNCTIONS 0
+
 /* Non-pointer swap function */
 /* The original value won't be affected */
 void NonPointerSwap(int a, int b){
@@ -42,13 +44,16 @@ void XORSwap(int *a, int *b) {
 
 int main(){
     int c = 5, d = 10;
+    
+#if TEST_SWAP_FUNCTIONS 1
     double e = 3.14, f = 2.71;
     char *p = "Hello", *q = "World";
-
     NonPointerSwap(c,d);
     XORSwap(&c, &d);
     Swap(&c, &d);
     SWAP (c, d);
     SWAP (e, f);
     SWAP (p, q);
+#endif
+
 }
