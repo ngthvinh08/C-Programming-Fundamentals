@@ -7,6 +7,7 @@ dần rồi in ra màn hình kết quả.
 #include <stdio.h>
 
 /* Non-pointer swap function */
+/* The original value won't be affected */
 void NonPointerSwap(int a, int b){
     int temp;
     temp = b;
@@ -37,6 +38,7 @@ int main(){
     int c = 5;
     int d = 10;
 
-    XORswap(&c, &d);
-    swap(&c, &d);
+    NonPointerSwap(c,d);
+    XORSwap(&c, &d);
+    Swap(&c, &d);
 }
