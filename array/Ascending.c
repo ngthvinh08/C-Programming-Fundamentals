@@ -14,6 +14,13 @@ void swap(int *a, int *b){
     *a = temp;
 }
 
+/* XOR swap */
+void swap(int *a, int *b) {
+    *a = *a ^ *b;
+    *b = *a ^ *b;
+    *a = *a ^ *b;
+}
+
 /* Function to check and re-arrange */
 
 int main(){
