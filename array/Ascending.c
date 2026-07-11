@@ -41,8 +41,14 @@ void XORSwap(int *a, int *b) {
 } while(0)
 
 
-/* Function to check and re-arrange */
-
+/* Function to re-arrange */
+void ReArrange(int arr[], int n){
+    for (int i = 0; i < n; i++){
+        if (arr[i] > arr[i+1]){
+            Swap (&arr[i], &arr[i+1]);
+        }
+    }
+}
 
 /* Function to check if array is sorted in ascending order */
 bool CheckOrder(int arr[], int n) {
@@ -63,7 +69,7 @@ bool CheckOrder(int arr[], int n) {
 
 int main(){
 
-    #if TEST_SWAP_FUNCTIONS 1
+    #if TEST_SWAP_FUNCTIONS == 1
         double e = 3.14, f = 2.71;
         char *p = "Hello", *q = "World";
         NonPointerSwap(c,d);
@@ -92,7 +98,11 @@ bool status = CheckOrder(arr, n);
 
 /* Re-arrange if in wrong order */
 if (!status){
-
+    ReArrange(arr, n);
+    printf("Values after rearrange: ");
+    for (int i = 0; i < n; i++){
+        printf ("%d", arr[i]);
+    }
 }
 
 }
