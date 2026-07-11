@@ -69,7 +69,7 @@ bool CheckOrder(int arr[], int n) {
 
 int main(){
 
-    #if TEST_SWAP_FUNCTIONS == 1
+    #if TEST_SWAP_FUNCTIONS
         double e = 3.14, f = 2.71;
         char *p = "Hello", *q = "World";
         NonPointerSwap(c,d);
