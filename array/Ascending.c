@@ -42,8 +42,7 @@ void XORSwap(int *a, int *b) {
 
 
 /* Function to check and re-arrange */
-#include <stdbool.h>
-#include <stdio.h>
+
 
 /* Function to check if array is sorted in ascending order */
 bool CheckOrder(int arr[], int n) {
