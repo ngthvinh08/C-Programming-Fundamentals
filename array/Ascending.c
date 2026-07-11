@@ -5,6 +5,7 @@ thứ tự tăng dần hay không. Nếu không thì sắp xếp lại theo th�
 dần rồi in ra màn hình kết quả.
 *******************************************************************/
 #include <stdio.h>
+#include <stdbool.h>
 
 #define TEST_SWAP_FUNCTIONS 0
 
@@ -41,19 +42,58 @@ void XORSwap(int *a, int *b) {
 
 
 /* Function to check and re-arrange */
+#include <stdbool.h>
+#include <stdio.h>
+
+/* Function to check if array is sorted in ascending order */
+bool CheckOrder(int arr[], int n) {
+    if (n <= 1) {
+        return true;  // Empty array or has 1 element
+    }
+
+    for (int i = 0; i < n - 1; i++) {
+        if (arr[i] > arr[i + 1]) {
+            printf("Wrong order\n");
+            return false;
+        }
+    }
+    
+    return true;   // Array is in correct order
+}
+
 
 int main(){
-    int c = 5, d = 10;
+
+    #if TEST_SWAP_FUNCTIONS 1
+        double e = 3.14, f = 2.71;
+        char *p = "Hello", *q = "World";
+        NonPointerSwap(c,d);
+        XORSwap(&c, &d);
+        Swap(&c, &d);
+        SWAP (c, d);
+        SWAP (e, f);
+        SWAP (p, q);
+    #endif
+
+    int n;
+    printf ("Input size of the array: ");
+    scanf ("%d", &n);
+    if (n <= 0){
+        printf ("There must be at least 1 element in the array\n");
+        return 1;
+    }
+
+    int arr[n];
+    for (int i = 0; i < n; i++){
+        scanf ("%d", arr[i]);
+    }
     
-#if TEST_SWAP_FUNCTIONS 1
-    double e = 3.14, f = 2.71;
-    char *p = "Hello", *q = "World";
-    NonPointerSwap(c,d);
-    XORSwap(&c, &d);
-    Swap(&c, &d);
-    SWAP (c, d);
-    SWAP (e, f);
-    SWAP (p, q);
-#endif
+/* Check order */
+bool status = CheckOrder(arr, n);
+
+/* Re-arrange if in wrong order */
+if (!status){
+
+}
 
 }
