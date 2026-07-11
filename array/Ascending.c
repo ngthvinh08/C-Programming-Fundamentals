@@ -96,6 +96,10 @@ int main(){
 /* Check order */
 bool status = CheckOrder(arr, n);
 
+if (status){
+    printf("Correct order\n");
+}
+
 /* Re-arrange if in wrong order */
 if (!status){
     ReArrange(arr, n);
