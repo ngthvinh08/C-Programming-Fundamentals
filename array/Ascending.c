@@ -101,7 +101,7 @@ if (!status){
     ReArrange(arr, n);
     printf("Values after rearrange: ");
     for (int i = 0; i < n; i++){
-        printf ("%d", arr[i]);
+        printf ("%d ", arr[i]);
     }
 }
 
