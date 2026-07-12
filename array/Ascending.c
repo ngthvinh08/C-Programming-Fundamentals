@@ -6,32 +6,9 @@ dần rồi in ra màn hình kết quả.
 *******************************************************************/
 #include <stdio.h>
 #include <stdbool.h>
+#include "Swap.h"
 
 #define TEST_SWAP_FUNCTIONS 0
-
-/* Non-pointer swap function */
-/* The original value won't be affected */
-void NonPointerSwap(int a, int b){
-    int temp;
-    temp = b;
-    b = a;
-    a = temp;
-}
-
-/* Swap function */
-void Swap(int *a, int *b){
-    int temp;
-    temp = *b;
-    *b = *a;
-    *a = temp;
-}
-
-/* XOR swap */
-void XORSwap(int *a, int *b) {
-    *a = *a ^ *b;
-    *b = *a ^ *b;
-    *a = *a ^ *b;
-}
 
 /* Macro */
 #define SWAP(x, y) do {          \
@@ -40,13 +17,30 @@ void XORSwap(int *a, int *b) {
     (y) = temp;                  \
 } while(0)
 
-
 /* Function to re-arrange */
+/* Bubble Sort
+ * i: Number of completed passes.
+ * j: Compare adjacent elements.
+ * After each pass, the largest element is placed at the end.
+ * Therefore, the last i elements are already sorted and
+ * do not need to be compared again. -> j < n - i -1
+ */
 void ReArrange(int arr[], int n){
-    for (int i = 0; i < n - 1; i++)
-        for (int j = 0; j < n - i - 1; j++)
-            if (arr[j] > arr[j+1])
+    for (int i = 0; i < n - 1; i++){
+        // Outer loop: Number of iterations
+        for (int j = 0; j < n - i - 1; j++){
+            // Inner loop: Compare 2 adjacent elements in each turn 
+             if (arr[j] > arr[j+1])
                 Swap(&arr[j], &arr[j+1]);
+        } 
+
+        /* Print the array after every iteration */
+        printf("Array after iteration %d: ", i+1);
+        for (int k = 0; k < n; k++){
+            printf("%d ", arr[k]);
+        }
+        printf("\n");
+    } 
 }
 
 /* Function to check if array is sorted in ascending order */
@@ -102,7 +96,7 @@ if (status){
 if (!status){
     printf("Wrong order\n");
     ReArrange(arr, n);
-    printf("Values after rearrange: ");
+    printf("Values after successfully rearranged: ");
     for (int i = 0; i < n; i++){
         printf ("%d ", arr[i]);
     }
