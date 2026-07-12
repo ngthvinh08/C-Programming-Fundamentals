@@ -18,9 +18,16 @@ dần rồi in ra màn hình kết quả.
 } while(0)
 
 /* Function to re-arrange */
+/* Bubble Sort
+ * i: Number of completed passes.
+ * j: Compare adjacent elements.
+ * After each pass, the largest element is placed at the end.
+ * Therefore, the last i elements are already sorted and
+ * do not need to be compared again. -> j < n - i -1
+ */
 void ReArrange(int arr[], int n){
-    for (int i = 0; i < n - 1; i++)
-        for (int j = 0; j < n - i - 1; j++)
+    for (int i = 0; i < n - 1; i++) // Outer loop: Number of iterations
+        for (int j = 0; j < n - i - 1; j++) // Inner loop: Compare 2 adjacent elements in each turn 
             if (arr[j] > arr[j+1])
                 Swap(&arr[j], &arr[j+1]);
 }
