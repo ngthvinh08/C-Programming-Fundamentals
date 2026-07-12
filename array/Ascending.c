@@ -6,32 +6,9 @@ dần rồi in ra màn hình kết quả.
 *******************************************************************/
 #include <stdio.h>
 #include <stdbool.h>
+#include "Swap.h"
 
 #define TEST_SWAP_FUNCTIONS 0
-
-/* Non-pointer swap function */
-/* The original value won't be affected */
-void NonPointerSwap(int a, int b){
-    int temp;
-    temp = b;
-    b = a;
-    a = temp;
-}
-
-/* Swap function */
-void Swap(int *a, int *b){
-    int temp;
-    temp = *b;
-    *b = *a;
-    *a = temp;
-}
-
-/* XOR swap */
-void XORSwap(int *a, int *b) {
-    *a = *a ^ *b;
-    *b = *a ^ *b;
-    *a = *a ^ *b;
-}
 
 /* Macro */
 #define SWAP(x, y) do {          \
@@ -39,7 +16,6 @@ void XORSwap(int *a, int *b) {
     (x) = (y);                   \
     (y) = temp;                  \
 } while(0)
-
 
 /* Function to re-arrange */
 void ReArrange(int arr[], int n){
