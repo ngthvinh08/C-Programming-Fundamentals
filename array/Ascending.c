@@ -26,10 +26,21 @@ dần rồi in ra màn hình kết quả.
  * do not need to be compared again. -> j < n - i -1
  */
 void ReArrange(int arr[], int n){
-    for (int i = 0; i < n - 1; i++) // Outer loop: Number of iterations
-        for (int j = 0; j < n - i - 1; j++) // Inner loop: Compare 2 adjacent elements in each turn 
-            if (arr[j] > arr[j+1])
+    for (int i = 0; i < n - 1; i++){
+        // Outer loop: Number of iterations
+        for (int j = 0; j < n - i - 1; j++){
+            // Inner loop: Compare 2 adjacent elements in each turn 
+             if (arr[j] > arr[j+1])
                 Swap(&arr[j], &arr[j+1]);
+        } 
+
+        /* Print the array after every iteration */
+        printf("Array after iteration %d: ", i+1);
+        for (int k = 0; k < n; k++){
+            printf("%d ", arr[k]);
+        }
+        printf("\n");
+    } 
 }
 
 /* Function to check if array is sorted in ascending order */
@@ -85,7 +96,7 @@ if (status){
 if (!status){
     printf("Wrong order\n");
     ReArrange(arr, n);
-    printf("Values after rearrange: ");
+    printf("Values after successfully rearranged: ");
     for (int i = 0; i < n; i++){
         printf ("%d ", arr[i]);
     }
