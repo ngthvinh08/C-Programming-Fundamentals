@@ -7,8 +7,10 @@ dần rồi in ra màn hình kết quả.
 #include <stdio.h>
 #include <stdbool.h>
 #include "Swap.h"
+#include "dsa/BubbleSort.h"
 
 #define TEST_SWAP_FUNCTIONS 0
+#define BUBBLESORT_ENABLE 0
 
 /* Macro */
 #define SWAP(x, y) do {          \
@@ -16,17 +18,6 @@ dần rồi in ra màn hình kết quả.
     (x) = (y);                   \
     (y) = temp;                  \
 } while(0)
-
-void BubbleSort(int arr[], int n){
-    for (int i = 0; i < n - 1; i++){
-        for (int j = 0; j < n -1 -i; j++){
-            if (arr[j] > arr[j+1])
-            {
-                Swap(&arr[j], &arr[j+1]);
-            }
-        }
-    }
-}
 
 /* Function to re-arrange */
 /* Bubble Sort
@@ -106,6 +97,11 @@ if (status){
 /* Re-arrange if in wrong order */
 if (!status){
     printf("Wrong order\n");
+
+#if BUBBLESORT_ENABLE
+    BubbleSort(arr,n);
+#endif
+
     ReArrange(arr, n);
     printf("Values after successfully rearranged: ");
     for (int i = 0; i < n; i++){
