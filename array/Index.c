@@ -20,8 +20,8 @@ int PrintBiggest(int arr[], int n){
             biggestidx = i;
         }
     }
-    printf ("Biggest element index: %d", biggestidx);
-    printf ("\n");
+    printf ("Biggest element index: %d\n", biggestidx);
+    printf ("Biggest value is: %d\n", max);
 }
 
 /* Find x first occurrence index */
@@ -62,7 +62,7 @@ int main(){
     /* Function call */
     PrintBiggest(arr, n);
     int result = FindFirstIndex(arr, n, x);
-    printf ("The first index of x is: %d", result);
+    printf ("The first index of %d is: %d", x, result);
 
     return 0;
 }
