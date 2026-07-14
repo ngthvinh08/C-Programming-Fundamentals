@@ -12,13 +12,16 @@ Bạn hãy viết chương trình:
 /* Print biggest element index */
 int PrintBiggest(int arr[], int n){
     int max = 0;
+    int biggestidx;
     int i;
     for (i = 0; i < n; i++){
         if (arr[i] >= max){
             max = arr[i];
+            biggestidx = i;
         }
     }
-    printf ("Biggest element index: %d", i);
+    printf ("Biggest element index: %d", biggestidx);
+    printf ("\n");
 }
 
 /* Find x first occurrence index */
@@ -59,6 +62,7 @@ int main(){
     /* Function call */
     PrintBiggest(arr, n);
     int result = FindFirstIndex(arr, n, x);
+    printf ("The first index of x is: %d", result);
 
     return 0;
 }
